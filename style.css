@@ -1,49 +1,47 @@
 body {
-    font-family: 'Liu Bei', serif; /* A font with a classic, Asian feel */
-    background-color: #e279cb; /* Light beige background */
-    background-repeat: repeat; /* Repeat the background image */
-    background-attachment: fixed; /* Fix the background image to stay static */
-    text-align: center; /* Center most content for a traditional look */
-    cursor: none;
-  }
+  font-family: 'Liu Bei', serif; /* A font with a classic, Asian feel */
+  background-color: #e279cb; /* Light beige background */
+  background-repeat: repeat; /* Repeat the background image */
+  background-attachment: fixed; /* Fix the background image to stay static */
+  text-align: center; /* Center most content for a traditional look */
+  cursor: none;
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+}
 
-  .custom-cursor {
-    position: absolute;
-    top: var(--cursor-Y);
-    left: var(--cursor-X);
-    width: 20px; /* Adjust width based on your image size */
-    height: 20px; /* Adjust height based on your image size */
-    background-image: url("images/cursor.png"); /* Path to your image */
-    background-repeat: no-repeat; /* Prevent tiling of the image */
-  }
-  
+.custom-cursor {
+  position: absolute;
+  top: var(--cursor-Y);
+  left: var(--cursor-X);
+  width: 20px; /* Adjust width based on your image size */
+  height: 20px; /* Adjust height based on your image size */
+  background-image: url("images/cursor.png"); /* Path to your image */
+  background-repeat: no-repeat; /* Prevent tiling of the image */
+}
 
-  header {
-    margin-bottom: 2rem;
-  }
-  
-  h1, h2, h3 {
-    color: #333; /* Darker text for headings */
-    margin: 1rem 0;
-    font-weight: bold;
-  }
-  
-  img {
-    width: 200px; /* Adjust image size as needed */
-    margin-bottom: 1rem;
-  }
-  
+header {
+  margin-bottom: 1rem; /* Reduced margin */
+}
+
+h1, h2, h3 {
+  color: #333; /* Darker text for headings */
+  margin: 0.5rem 0; /* Reduced margin */
+  font-weight: bold;
+}
+
+img {
+  width: 150px; /* Adjust image size as needed */
+  margin-bottom: 0.5rem; /* Reduced margin */
+}
 
 section {
-  margin-bottom: 2rem;
-  padding: 2rem;
+  margin-bottom: 1rem; /* Reduced margin */
+  padding: 1rem; /* Reduced padding */
   border: 2px solid #f096dc; /* Earthy brown border */
   border-radius: 10px; /* Rounded corners with a slight imperfection */
   background-color: rgba(255, 255, 255, 0.8); /* White background with slight transparency */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
-
-
 
 ul {
   list-style: none;
@@ -52,13 +50,14 @@ ul {
 }
 
 li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem; /* Reduced margin */
   /* Add a subtle background color gradient for list items: */
   background: linear-gradient(to right, rgba(255,255,255,0.3), rgba(255,255,255,0));
 }
 
 footer {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 1rem; /* Reduced margin */
   color: #666; /* Lighter text color for footer */
+  padding: 0.5rem; /* Added padding for footer */
 }
