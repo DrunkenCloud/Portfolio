@@ -59,6 +59,20 @@
     </div>
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', () => {
+            const updateDimensions = () => {
+                const catText = document.querySelector('.cat-text');
+                const img = document.querySelector('.image-container img');
+                const catTextWidth = catText.getBoundingClientRect().width;
+                const imgWidth = img.getBoundingClientRect().width;
+
+                document.documentElement.style.setProperty('--cat-text-width', `${catTextWidth}px`);
+                document.documentElement.style.setProperty('--img-width', `${imgWidth}px`);
+            };
+
+            updateDimensions();
+
+            setInterval(updateDimensions, 10);
+
             const customCursor = document.getElementById('custom-cursor');
             document.body.style.cursor = 'none';
 
