@@ -12,57 +12,82 @@
             <h1>DrunkenCloud</h1>
             <nav>
                 <ul>
-                    <li><a href="#">About Me</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Meh IDK</a></li>
+                    <li><a href="#" id="about-link">About Me</a></li>
+                    <li><a href="#" id="projects-link">Projects</a></li>
+                    <li><a href="#" id="meh-link">Meh IDK</a></li>
                 </ul>
             </nav>
         </div>
         <main class="content-container">
             <div class="intro">
-              <div class="circle">
-                <p>Just a Guy who :</p>
-                <div class="circle-content">
-                    <div class="line">
-                        <div class="emoji">🍶</div>
-                        <div class="text">Watches Anime</div>
-                    </div>
-                    <div class="line">
-                        <div class="emoji">🍶</div>
-                        <div class="text">Likes Reading Books</div>
-                    </div>
-                    <div class="line">
-                        <div class="emoji">🍶</div>
-                        <div class="text">Hates travelling and going outside but does it anyway</div>
+                <div class="circle">
+                    <div class="circle-content">
+                        <div class="circle-item">
+                            <p>Just a Guy who :</p>
+                        </div>
+                        <div class="circle-item">
+                            <div class="line">
+                                <div class="emoji">🍶</div>
+                                <div class="text">Watches Anime</div>
+                            </div>
+                            <div class="line">
+                                <div class="emoji">🍶</div>
+                                <div class="text">Likes Reading Books</div>
+                            </div>
+                            <div class="line">
+                                <div class="emoji">🍶</div>
+                                <div class="text">Hates travelling and going outside but does it anyway</div>
+                            </div>
+                        </div>
+                        <div class="circle-item">
+                            <div class="image-container">
+                                <div class="cat-text">P.S I love cats</div>
+                                <img src="images/cat.png" alt="Cat">
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="image-container">
-                    <div class="cat-text">P.S I love cats</div>
-                    <img src="images/cat.png" alt="Cat">
-                </div>
-            </div>
             </div>
             <section class="content">
                 <!-- Placeholder for additional content -->
+                <div id="dynamic-content">
+                    Welcome to my website! Click on the links above to know more.
+                </div>
             </section>
         </main>
     </div>
-  <script type="text/javascript">
-    window.addEventListener('load', () => {
-      // Selecting necessary elements
-      const catText = document.querySelector('.cat-text');
-      const img = document.querySelector('.image-container img');
-      const circleContent = document.querySelector('.circle-content');
-      const circle = document.querySelector('.circle');
-      const justAGuy = document.querySelector('.circle p');
+    <script type="text/javascript">
+        window.addEventListener('load', () => {
+            // Selecting necessary elements
+            const catText = document.querySelector('.cat-text');
+            const img = document.querySelector('.image-container img');
+            const circleContent = document.querySelector('.circle-content');
+            const circle = document.querySelector('.circle');
+            const justAGuy = document.querySelector('.circle p');
 
-      // Getting the width of the "P.S I love cats" text and the cat image
-      const catTextWidth = catText.getBoundingClientRect().width;
-      const imgWidth = img.getBoundingClientRect().width;
-      
-      document.documentElement.style.setProperty('--cat-text-width', `${catTextWidth}px`);
-      document.documentElement.style.setProperty('--img-width', `${imgWidth}px`);
-    });
-  </script>
+            const catTextWidth = catText.getBoundingClientRect().width;
+            const imgWidth = img.getBoundingClientRect().width;
+            
+            document.documentElement.style.setProperty('--cat-text-width', `${catTextWidth}px`);
+            document.documentElement.style.setProperty('--img-width', `${imgWidth}px`);
+
+            const aboutLink = document.getElementById('about-link');
+            const projectsLink = document.getElementById('projects-link');
+            const mehLink = document.getElementById('meh-link');
+            const dynamicContent = document.getElementById('dynamic-content');
+
+            aboutLink.addEventListener('click', () => {
+                dynamicContent.innerHTML = '<h2>About Me</h2><p>This is the About Me section.</p>';
+            });
+
+            projectsLink.addEventListener('click', () => {
+                dynamicContent.innerHTML = '<h2>Projects</h2><p>This is the Projects section.</p>';
+            });
+
+            mehLink.addEventListener('click', () => {
+                dynamicContent.innerHTML = '<h2>Meh IDK</h2><p>This is the Meh IDK section.</p>';
+            });
+        });
+    </script>
 </body>
 </html>
