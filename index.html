@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DrunkenCloud</title>
     <link rel="stylesheet" href="styles.css">
+    <div class="custom-cursor" id="custom-cursor"></div>
 </head>
 <body>
     <div class="container">
@@ -27,15 +28,15 @@
                         </div>
                         <div class="circle-item">
                             <div class="line">
-                                <div class="emoji">🍶</div>
+                                <div class="emoji"><img src="images/coffee.png" alt="Coffee" class="emoji-img"></div>
                                 <div class="text">Watches Anime</div>
                             </div>
                             <div class="line">
-                                <div class="emoji">🍶</div>
+                                <div class="emoji"><img src="images/coffee.png" alt="Coffee" class="emoji-img"></div>
                                 <div class="text">Likes Reading Books</div>
                             </div>
                             <div class="line">
-                                <div class="emoji">🍶</div>
+                                <div class="emoji"><img src="images/coffee.png" alt="Coffee" class="emoji-img"></div>
                                 <div class="text">Hates travelling and going outside but does it anyway</div>
                             </div>
                         </div>
@@ -49,43 +50,50 @@
                 </div>
             </div>
             <section class="content">
-                <!-- Placeholder for additional content -->
                 <div id="dynamic-content">
-                    Welcome to my website! Click on the links above to know more.
+                    Welcome to my website! Its a Work In Progress but feel free to look around. Click on the links above to know more. Oh and I hope you like the cursor :). Your cursor is just hidden, you can see it if you hover over a link or clickable item like the clouds above.
                 </div>
             </section>
         </main>
     </div>
     <script type="text/javascript">
-        window.addEventListener('load', () => {
-            // Selecting necessary elements
-            const catText = document.querySelector('.cat-text');
-            const img = document.querySelector('.image-container img');
-            const circleContent = document.querySelector('.circle-content');
-            const circle = document.querySelector('.circle');
-            const justAGuy = document.querySelector('.circle p');
+        document.addEventListener('DOMContentLoaded', () => {
+            const customCursor = document.getElementById('custom-cursor');
+            document.body.style.cursor = 'none';
 
-            const catTextWidth = catText.getBoundingClientRect().width;
-            const imgWidth = img.getBoundingClientRect().width;
-            
-            document.documentElement.style.setProperty('--cat-text-width', `${catTextWidth}px`);
-            document.documentElement.style.setProperty('--img-width', `${imgWidth}px`);
+             document.addEventListener('mousemove', (e) => {
+                const windowWidth = window.innerWidth;
+                const windowHeight = window.innerHeight;
 
-            const aboutLink = document.getElementById('about-link');
-            const projectsLink = document.getElementById('projects-link');
-            const mehLink = document.getElementById('meh-link');
-            const dynamicContent = document.getElementById('dynamic-content');
+                const mirroredX = windowWidth - e.clientX;
+                const mirroredY = windowHeight - e.clientY;
 
-            aboutLink.addEventListener('click', () => {
-                dynamicContent.innerHTML = '<h2>About Me</h2><p>This is the About Me section.</p>';
+                customCursor.style.left = `${mirroredX}px`;
+                customCursor.style.top = `${mirroredY}px`;
             });
 
-            projectsLink.addEventListener('click', () => {
-                dynamicContent.innerHTML = '<h2>Projects</h2><p>This is the Projects section.</p>';
+            const loadContent = (url) => {
+                fetch(url)
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('dynamic-content').innerHTML = data;
+                    })
+                    .catch(error => console.error('Error loading content:', error));
+            };
+
+            document.getElementById('about-link').addEventListener('click', (e) => {
+                e.preventDefault();
+                loadContent('static/aboutme.html');
             });
 
-            mehLink.addEventListener('click', () => {
-                dynamicContent.innerHTML = '<h2>Meh IDK</h2><p>This is the Meh IDK section.</p>';
+            document.getElementById('projects-link').addEventListener('click', (e) => {
+                e.preventDefault();
+                loadContent('static/projects.html');
+            });
+
+            document.getElementById('meh-link').addEventListener('click', (e) => {
+                e.preventDefault();
+                loadContent('static/meh.html');
             });
         });
     </script>
