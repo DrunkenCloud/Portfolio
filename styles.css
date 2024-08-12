@@ -58,7 +58,6 @@ body {
 }
 
 h1 {
-    font-family: 'Cursive', sans-serif;
     font-size: 3vw;
     color: #000;
     margin-top: 1vw;
@@ -81,15 +80,14 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    font-size: 1.0em;
+    font-size: 1.4vw;
     color: #000;
-    font-family: 'Cursive', sans-serif;
     background-image: url('images/cloud.png');
-    background-size: 140px 90px;
+    background-size: 11.0vw 7.0vw;
     background-repeat: no-repeat;
     background-position: center;
-    width: 140px;
-    height: 60px;
+    width: 11.0vw;
+    height: 4.5vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -134,36 +132,62 @@ nav ul li a {
     align-items: flex-start;
     position: absolute;
     top: 10%;
-    left: 20%;
-    width: 70%;
+    left: 15%;
+    width: 75%;
     height: 90%;
     max-height: 80%;
     overflow: hidden;
     padding: 10px;
 }
 
+.yuji-mai-regular {
+    font-family: "Yuji Mai", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.yuji-mai-regular-1 {
+    font-family: "Yuji Mai", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.sora {
+    font-family: "Sora", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.liu-jian-mao-cao-regular {
+  font-family: "Liu Jian Mao Cao", cursive;
+  font-weight: 600;
+  font-style: normal;
+}
+
 .circle-item {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    margin-bottom: 10px;
 }
 
 .line {
+    font-family: "Cinzel", serif;
+    font-weight: 420;
     flex-grow: 1;
     display: flex;
     align-items: flex-end;
-    margin-bottom: 10px;
     text-align: center;
-    width: 100%;
+    font-optical-sizing: auto;
+    font-style: initial;
+    width: 120%;
 }
 
 .emoji img {
     flex-grow: 1;
     display: flex;
     flex-direction: row;
-    width: 40px;
-    height: 40px;
+    width: 2.5vw;
+    height: 5.0vh;
     font-size: 2em;
     margin-right: 10px;
 }
@@ -172,19 +196,17 @@ nav ul li a {
     flex-grow: 3;
     display: flex;
     flex-direction: row;
-    font-family: 'Cursive', sans-serif;
-    font-size: 1em;
+    font-size: 2.7vh;
     text-align: left;
     align-items: flex-start;
     width: 100%;
 }
 
 .circle p {
-    font-family: 'Cursive', sans-serif;
-    font-size: 1.5em;
+    font-size: 3.2vh;
     margin: 0;
     position: absolute;
-    left: -10%;
+    left: -5%;
     width: 100%;
     text-align: center;
 }
@@ -194,7 +216,7 @@ nav ul li a {
     display: flex;
     position: absolute;
     transform: translateX(0);
-    left: calc(40% - (var(--cat-text-width) + var(--img-width)) / 2);
+    left: 2.2vw;
     align-items: center;
     position: relative;
     z-index: 1;
@@ -202,12 +224,11 @@ nav ul li a {
 
 .image-container img {
     width: 20%;
-    height: auto;
+    height: unset;
 }
 
 .cat-text {
-    font-family: 'Cursive', sans-serif;
-    font-size: 1.5em;
+    font-size: 4.0vh;
     margin-right: 10px;
     align-self: center;
     left: 20%;
@@ -225,6 +246,7 @@ nav ul li a {
     padding: 1cm;
     margin-left: 30%;
     margin-right: 3%;
+    font-size: 2.5vh;
 }
 
 #dynamic-content {
@@ -271,6 +293,12 @@ nav ul li a {
     color: pink;
 }
 
+.about-container h3 {
+    font-family: "Yuji Mai", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
 .tile {
     flex: 1 1 calc(50% - 20px);
     background-color: #da8fff;
@@ -289,11 +317,11 @@ nav ul li a {
 }
 
 .tile-title {
-    font-size: 18px;
+    font-size: 2.5vh;
     margin-bottom: 10px;
 }
 
 .tile-description {
-    font-size: 14px;
+    font-size: 2.0vh;
     color: #555;
 }
