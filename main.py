@@ -8,6 +8,11 @@ class NoCacheHTTPRequestHandler(SimpleHTTPRequestHandler):
         self.send_header('Expires', '0')
         super().end_headers()
 
+    def do_GET(self):
+        if self.path == '/resume':
+            self.path = '/static/resume.pdf'
+        return super().do_GET()
+
 if __name__ == '__main__':
     os.chdir('.')
     server_address = ('', 3000)
